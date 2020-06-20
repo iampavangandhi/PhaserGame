@@ -1,3 +1,5 @@
+//Refrence: https://phaser.io/examples/v3/view/scalemanager/full-screen-game
+
 let config = {
   type: Phaser.AUTO,
 
@@ -117,7 +119,7 @@ function create() {
   //Add a group of apples = physical objects
   let fruits = this.physics.add.group({
     key: "apple",
-    repeat: 8,
+    repeat: 12,
     setScale: { x: 0.2, y: 0.2 },
     setXY: { x: 10, y: 0, stepX: 100 },
   });
@@ -130,8 +132,9 @@ function create() {
   //create more platforms
   let platforms = this.physics.add.staticGroup();
   platforms.create(500, 350, "ground").setScale(2, 0.5).refreshBody();
-  platforms.create(700, 200, "ground").setScale(2, 0.5).refreshBody();
-  platforms.create(100, 200, "ground").setScale(2, 0.5).refreshBody();
+  platforms.create(850, 275, "ground").setScale(2, 0.5).refreshBody();
+  platforms.create(100, 200, "ground").setScale(2.5, 0.5).refreshBody();
+  platforms.create(1125, 150, "ground").setScale(1.5, 0.5).refreshBody();
   platforms.add(ground);
 
   this.physics.add.existing(ground, true);
